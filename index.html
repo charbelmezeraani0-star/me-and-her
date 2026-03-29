@@ -21,487 +21,201 @@
     }
 
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: 'Lato', sans-serif;
-      font-weight: 300;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
+    body { background: var(--bg); color: var(--text); font-family: 'Lato', sans-serif; font-weight: 300; min-height: 100vh; overflow-x: hidden; }
 
     /* ── HERO ── */
     .hero {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      min-height: 100vh;
-      padding: 60px 24px;
-      overflow: hidden;
+      position: relative; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; min-height: 100vh; padding: 60px 24px; overflow: hidden;
     }
-
     .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
+      content: ''; position: absolute; inset: 0;
       background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(192,57,43,0.18) 0%, transparent 70%);
       pointer-events: none;
     }
-
-    .hearts-bg {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      overflow: hidden;
-    }
-
-    .hearts-bg span {
-      position: absolute;
-      font-size: 1.2rem;
-      opacity: 0;
-      animation: floatHeart linear infinite;
-      color: var(--red);
-    }
-
+    .hearts-bg { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+    .hearts-bg span { position: absolute; font-size: 1.2rem; opacity: 0; animation: floatHeart linear infinite; color: var(--red); }
     @keyframes floatHeart {
       0%   { transform: translateY(100vh) rotate(0deg); opacity: 0; }
-      10%  { opacity: 0.4; }
-      90%  { opacity: 0.2; }
+      10%  { opacity: 0.4; } 90% { opacity: 0.2; }
       100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
     }
-
     .hero-names {
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(2.8rem, 8vw, 6rem);
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      line-height: 1.1;
+      font-family: 'Playfair Display', serif; font-size: clamp(2.8rem, 8vw, 6rem);
+      font-weight: 700; letter-spacing: 0.04em; line-height: 1.1;
       background: linear-gradient(135deg, #fff 30%, var(--red-light) 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      position: relative;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     }
-
-    .hero-ampersand {
-      font-style: italic;
-      font-weight: 400;
-      color: var(--red-light);
-      -webkit-text-fill-color: var(--red-light);
-    }
-
-    .hero-divider {
-      width: 80px;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, var(--red), transparent);
-      margin: 28px auto;
-    }
-
+    .hero-ampersand { font-style: italic; font-weight: 400; color: var(--red-light); -webkit-text-fill-color: var(--red-light); }
+    .hero-divider { width: 80px; height: 2px; background: linear-gradient(90deg, transparent, var(--red), transparent); margin: 28px auto; }
     .hero-message {
-      font-family: 'Playfair Display', serif;
-      font-style: italic;
-      font-size: clamp(1rem, 2.5vw, 1.35rem);
-      color: #d4b0ae;
-      max-width: 520px;
-      line-height: 1.75;
+      font-family: 'Playfair Display', serif; font-style: italic;
+      font-size: clamp(1rem, 2.5vw, 1.35rem); color: #d4b0ae; max-width: 520px; line-height: 1.75;
     }
-
-    .hero-message::before,
-    .hero-message::after {
-      content: '"';
-      color: var(--red-light);
-      font-size: 1.6em;
-      line-height: 0;
-      vertical-align: -0.4em;
-    }
-
+    .hero-message::before, .hero-message::after { content: '"'; color: var(--red-light); font-size: 1.6em; line-height: 0; vertical-align: -0.4em; }
     .scroll-hint {
-      position: absolute;
-      bottom: 36px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-      color: var(--muted);
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
+      position: absolute; bottom: 36px; display: flex; flex-direction: column; align-items: center; gap: 8px;
+      color: var(--muted); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase;
       animation: bounce 2s ease-in-out infinite;
     }
-
     .scroll-hint svg { opacity: 0.5; }
+    @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50%       { transform: translateY(6px); }
-    }
-
-    /* ── TIMELINE SECTION ── */
-    .timeline-section {
-      padding: 80px 24px 120px;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      color: var(--red-light);
-      margin-bottom: 72px;
-      letter-spacing: 0.08em;
-    }
-
+    /* ── TIMELINE ── */
+    .timeline-section { padding: 80px 24px 120px; max-width: 900px; margin: 0 auto; }
+    .section-title { text-align: center; font-family: 'Playfair Display', serif; font-size: clamp(1.4rem, 4vw, 2rem); color: var(--red-light); margin-bottom: 72px; letter-spacing: 0.08em; }
     .timeline { position: relative; }
-
     .timeline::before {
-      content: '';
-      position: absolute;
-      left: 50%;
-      top: 0;
-      bottom: 0;
-      width: 2px;
+      content: ''; position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
       background: linear-gradient(to bottom, transparent, var(--red-dark) 8%, var(--red-dark) 92%, transparent);
       transform: translateX(-50%);
     }
 
-    /* ── CARDS ── */
-    .event {
-      display: flex;
-      align-items: center;
-      margin-bottom: 72px;
-      position: relative;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
+    /* ── INSERT POINT ── */
+    .insert-point { position: relative; display: flex; justify-content: center; align-items: center; height: 40px; margin: -16px 0; z-index: 5; }
+    .insert-point button {
+      width: 28px; height: 28px; border-radius: 50%; background: var(--bg);
+      border: 2px dashed var(--red-dark); color: var(--red-light); font-size: 1.1rem; line-height: 1;
+      cursor: pointer; display: flex; align-items: center; justify-content: center;
+      opacity: 0; transition: opacity 0.2s, background 0.2s, color 0.2s;
     }
+    .timeline:hover .insert-point button { opacity: 1; }
+    .insert-point button:hover { background: var(--red-dark); color: #fff; border-style: solid; }
 
+    /* ── CARDS — sides controlled by JS classes ── */
+    .event {
+      display: flex; align-items: center; margin-bottom: 72px; position: relative;
+      opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease;
+    }
     .event.visible { opacity: 1; transform: translateY(0); }
-
-    .event:nth-child(odd)  { flex-direction: row; }
-    .event:nth-child(even) { flex-direction: row-reverse; }
+    .event.side-left  { flex-direction: row; }
+    .event.side-right { flex-direction: row-reverse; }
 
     .event-card {
-      width: calc(50% - 48px);
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+      width: calc(50% - 48px); background: var(--card); border: 1px solid var(--border);
+      border-radius: 16px; overflow: hidden; box-shadow: 0 4px 32px rgba(0,0,0,0.5);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
-    .event-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 8px 48px rgba(192,57,43,0.2);
-    }
+    .event-card:hover { transform: translateY(-4px); box-shadow: 0 8px 48px rgba(192,57,43,0.2); }
 
     /* ── SLIDESHOW ── */
-    .slideshow {
-      width: 100%;
-      aspect-ratio: 4/3;
-      position: relative;
-      overflow: hidden;
-      background: #1a1a1a;
-      border-bottom: 1px solid var(--border);
-    }
-
-    /* slides container */
-    .slides-track {
-      position: absolute;
-      inset: 0;
-    }
-
-    .slide {
-      position: absolute;
-      inset: 0;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
+    .slideshow { width: 100%; aspect-ratio: 4/3; position: relative; overflow: hidden; background: #1a1a1a; border-bottom: 1px solid var(--border); }
+    .slides-track { position: absolute; inset: 0; }
+    .slide { position: absolute; inset: 0; opacity: 0; transition: opacity 0.8s ease; }
     .slide.active { opacity: 1; }
+    .slide img, .slide video { width: 100%; height: 100%; object-fit: cover; display: block; }
 
-    .slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
+    /* video badge */
+    .video-badge {
+      position: absolute; bottom: 8px; left: 8px;
+      background: rgba(0,0,0,0.6); color: #fff; font-size: 0.6rem;
+      letter-spacing: 0.1em; text-transform: uppercase; padding: 3px 7px;
+      border-radius: 4px; backdrop-filter: blur(4px); pointer-events: none; z-index: 5;
+      display: none;
     }
+    .slide.active .video-badge { display: block; }
 
-    /* empty state */
     .add-photo-label {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s;
+      position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 10px; color: var(--muted); font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase;
+      cursor: pointer; transition: background 0.2s;
     }
-
     .add-photo-label:hover { background: rgba(255,255,255,0.03); }
-
-    .add-photo-label svg {
-      width: 36px;
-      height: 36px;
-      stroke: var(--red);
-      opacity: 0.6;
-    }
-
+    .add-photo-label svg { width: 36px; height: 36px; stroke: var(--red); opacity: 0.6; }
     .add-photo-label.hidden { display: none; }
 
-    /* add more button (shown after first image) */
     .add-more-btn {
-      position: absolute;
-      bottom: 10px;
-      right: 10px;
-      background: rgba(0,0,0,0.65);
-      border: 1px solid rgba(255,255,255,0.15);
-      border-radius: 8px;
-      color: #fff;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 5px 10px;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      gap: 5px;
-      backdrop-filter: blur(4px);
-      transition: background 0.2s;
-      z-index: 10;
+      position: absolute; bottom: 10px; right: 10px; background: rgba(0,0,0,0.65);
+      border: 1px solid rgba(255,255,255,0.15); border-radius: 8px; color: #fff;
+      font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 10px;
+      cursor: pointer; display: none; align-items: center; gap: 5px;
+      backdrop-filter: blur(4px); transition: background 0.2s; z-index: 10;
     }
-
     .add-more-btn:hover { background: rgba(192,57,43,0.7); }
     .add-more-btn svg { width: 12px; height: 12px; stroke: currentColor; flex-shrink: 0; }
     .slideshow.has-images .add-more-btn { display: flex; }
 
-    /* dots indicator */
-    .dots {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      display: none;
-      gap: 5px;
-      z-index: 10;
-    }
-
+    .dots { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); display: none; gap: 5px; z-index: 10; }
     .slideshow.has-images .dots { display: flex; }
+    .dot-indicator { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.35); transition: background 0.3s, transform 0.3s; }
+    .dot-indicator.active { background: var(--red-light); transform: scale(1.3); }
 
-    .dot-indicator {
-      width: 6px;
-      height: 6px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.35);
-      transition: background 0.3s, transform 0.3s;
-    }
-
-    .dot-indicator.active {
-      background: var(--red-light);
-      transform: scale(1.3);
-    }
-
-    /* remove button */
     .remove-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      background: rgba(0,0,0,0.65);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: #fff;
-      font-size: 1rem;
-      line-height: 1;
-      cursor: pointer;
-      display: none;
-      align-items: center;
-      justify-content: center;
-      z-index: 20;
-      backdrop-filter: blur(4px);
-      transition: background 0.2s;
+      position: absolute; top: 10px; right: 10px; width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,0,0,0.65); border: 1px solid rgba(255,255,255,0.2); color: #fff;
+      font-size: 1rem; line-height: 1; cursor: pointer; display: none; align-items: center; justify-content: center;
+      z-index: 20; backdrop-filter: blur(4px); transition: background 0.2s;
     }
-
     .remove-btn:hover { background: rgba(192,57,43,0.85); }
     .slideshow.has-images:hover .remove-btn { display: flex; }
 
-    /* image counter */
-    .img-counter {
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      background: rgba(0,0,0,0.55);
-      border-radius: 6px;
-      color: #ccc;
-      font-size: 0.7rem;
-      padding: 3px 8px;
-      display: none;
-      z-index: 10;
-      backdrop-filter: blur(4px);
-    }
-
+    .img-counter { position: absolute; top: 10px; left: 10px; background: rgba(0,0,0,0.55); border-radius: 6px; color: #ccc; font-size: 0.7rem; padding: 3px 8px; display: none; z-index: 10; backdrop-filter: blur(4px); }
     .slideshow.has-images .img-counter { display: block; }
+    .file-input { display: none; }
 
-    /* hidden file input */
-    .file-input {
-      display: none;
+    /* ── CARD BODY ── */
+    .card-body { padding: 20px 22px 18px; }
+    .event-date { font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--red-light); margin-bottom: 8px; }
+    .event-title { font-family: 'Playfair Display', serif; font-size: 1.15rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .event-desc { font-size: 0.88rem; color: #aaa; line-height: 1.65; }
+
+    [contenteditable] { outline: none; border-bottom: 1px dashed transparent; transition: border-color 0.2s; min-height: 1.2em; }
+    [contenteditable]:focus { border-bottom-color: var(--red-dark); }
+    [contenteditable]:empty::before { content: attr(data-placeholder); color: #444; pointer-events: none; }
+
+    .edit-hint { font-size: 0.62rem; color: #333; letter-spacing: 0.1em; text-transform: uppercase; padding-top: 10px; opacity: 0; transition: opacity 0.2s; display: flex; align-items: center; gap: 5px; }
+    .edit-hint svg { width: 10px; height: 10px; stroke: #444; }
+    .event-card:hover .edit-hint { opacity: 1; }
+
+    /* ── DELETE MEMORY BUTTON ── */
+    .delete-event-btn {
+      position: absolute;
+      top: 10px; left: 10px;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: rgba(0,0,0,0.65); border: 1px solid rgba(255,255,255,0.15);
+      color: #fff; font-size: 0.8rem; line-height: 1; cursor: pointer;
+      display: none; align-items: center; justify-content: center;
+      z-index: 30; backdrop-filter: blur(4px); transition: background 0.2s;
     }
+    .delete-event-btn:hover { background: rgba(192,57,43,0.9); }
+    .event:hover .delete-event-btn { display: flex; }
 
-    /* card body */
-    .card-body { padding: 20px 22px 24px; }
-
-    .event-date {
-      font-size: 0.72rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--red-light);
-      margin-bottom: 8px;
-    }
-
-    .event-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      margin-bottom: 10px;
-      color: #fff;
-    }
-
-    .event-desc {
-      font-size: 0.88rem;
-      color: #aaa;
-      line-height: 1.65;
-    }
-
-    /* editable fields for new cards */
-    [contenteditable] {
-      outline: none;
-      border-bottom: 1px dashed transparent;
-      transition: border-color 0.2s;
-      min-height: 1.2em;
-    }
-
-    [contenteditable]:focus {
-      border-bottom-color: var(--red-dark);
-    }
-
-    [contenteditable]:empty::before {
-      content: attr(data-placeholder);
-      color: #444;
-      pointer-events: none;
-    }
-
-    /* ── ADD MEMORY BUTTON ── */
-    .add-memory-wrap {
-      display: flex;
-      justify-content: center;
-      margin-top: 16px;
-    }
-
+    /* ── ADD MEMORY ── */
+    .add-memory-wrap { display: flex; justify-content: center; margin-top: 32px; }
     .add-memory-btn {
-      background: transparent;
-      border: 1px solid var(--red-dark);
-      color: var(--red-light);
-      border-radius: 50px;
-      padding: 12px 28px;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: background 0.2s, color 0.2s;
+      background: transparent; border: 1px solid var(--red-dark); color: var(--red-light);
+      border-radius: 50px; padding: 12px 28px; font-family: 'Lato', sans-serif;
+      font-size: 0.82rem; letter-spacing: 0.12em; text-transform: uppercase;
+      cursor: pointer; display: flex; align-items: center; gap: 8px; transition: background 0.2s, color 0.2s;
     }
-
-    .add-memory-btn:hover {
-      background: var(--red-dark);
-      color: #fff;
-    }
-
+    .add-memory-btn:hover { background: var(--red-dark); color: #fff; }
     .add-memory-btn svg { width: 14px; height: 14px; stroke: currentColor; flex-shrink: 0; }
 
-    /* center dot */
-    .dot {
-      position: absolute;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 16px;
-      height: 16px;
-      background: var(--red);
-      border-radius: 50%;
-      border: 3px solid var(--bg);
-      box-shadow: 0 0 0 2px var(--red-dark), 0 0 16px rgba(192,57,43,0.6);
-      z-index: 1;
-      flex-shrink: 0;
-    }
-
+    .dot { position: absolute; left: 50%; transform: translateX(-50%); width: 16px; height: 16px; background: var(--red); border-radius: 50%; border: 3px solid var(--bg); box-shadow: 0 0 0 2px var(--red-dark), 0 0 16px rgba(192,57,43,0.6); z-index: 1; flex-shrink: 0; }
     .event-spacer { width: 48px; flex-shrink: 0; }
 
     /* ── SAVE BUTTON ── */
     .save-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      background: var(--red);
-      color: #fff;
-      border: none;
-      border-radius: 50px;
-      padding: 12px 22px;
-      font-family: 'Lato', sans-serif;
-      font-size: 0.82rem;
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      box-shadow: 0 4px 24px rgba(192,57,43,0.5);
-      z-index: 100;
-      transition: background 0.2s, transform 0.2s;
+      position: fixed; bottom: 28px; right: 28px; background: var(--red); color: #fff; border: none;
+      border-radius: 50px; padding: 12px 22px; font-family: 'Lato', sans-serif; font-size: 0.82rem;
+      font-weight: 400; letter-spacing: 0.1em; text-transform: uppercase; cursor: pointer;
+      display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 24px rgba(192,57,43,0.5);
+      z-index: 100; transition: background 0.2s, transform 0.2s;
     }
-
     .save-btn:hover { background: var(--red-light); transform: translateY(-2px); }
     .save-btn svg { width: 15px; height: 15px; stroke: currentColor; flex-shrink: 0; }
 
-    /* ── FOOTER ── */
-    footer {
-      text-align: center;
-      padding: 48px 24px;
-      color: var(--muted);
-      font-size: 0.8rem;
-      border-top: 1px solid var(--border);
-    }
-
+    footer { text-align: center; padding: 48px 24px; color: var(--muted); font-size: 0.8rem; border-top: 1px solid var(--border); }
     footer span { color: var(--red-light); }
 
-    /* ── MOBILE ── */
     @media (max-width: 640px) {
       .timeline::before { left: 20px; }
-
-      .event,
-      .event:nth-child(even) {
-        flex-direction: column;
-        align-items: flex-start;
-        padding-left: 52px;
-      }
-
+      .event.side-left, .event.side-right { flex-direction: column; align-items: flex-start; padding-left: 52px; }
       .dot { left: 20px; top: 24px; }
       .event-card { width: 100%; }
       .event-spacer { display: none; }
+      .insert-point { margin-left: 52px; justify-content: flex-start; }
     }
   </style>
 </head>
@@ -509,25 +223,18 @@
 
 <div class="hearts-bg" id="heartsContainer"></div>
 
-<!-- HERO -->
 <section class="hero">
-  <h1 class="hero-names">
-    Charbel <span class="hero-ampersand">&amp;</span> Loutchiana
-  </h1>
+  <h1 class="hero-names">Charbel <span class="hero-ampersand">&amp;</span> Loutchiana</h1>
   <div class="hero-divider"></div>
   <p class="hero-message">I will love you till I die</p>
   <div class="scroll-hint">
     <span>Our Story</span>
-    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="2">
-      <path d="M8 2v16M2 13l6 6 6-6"/>
-    </svg>
+    <svg width="16" height="20" viewBox="0 0 16 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 2v16M2 13l6 6 6-6"/></svg>
   </div>
 </section>
 
-<!-- TIMELINE -->
 <section class="timeline-section">
   <h2 class="section-title">Every moment with you</h2>
-
   <div class="timeline">
 
     <!-- Event 1 -->
@@ -536,32 +243,29 @@
         <div class="slideshow" id="show-1">
           <div class="slides-track" id="track-1"></div>
           <div class="add-photo-label" id="label-1" onclick="document.getElementById('file-1').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-1"></div>
           <span class="img-counter" id="counter-1"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-1').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('1')">×</button>
-          <input class="file-input" id="file-1" type="file" accept="image/*" multiple onchange="addImages(this, '1')"/>
+          <button class="remove-btn" onclick="removeImage('1')">×</button>
+          <input class="file-input" id="file-1" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'1')"/>
         </div>
         <div class="card-body">
-          <div class="event-date">16 October 2025</div>
-          <div class="event-title">Our First Date</div>
-          <div class="event-desc">A casual moment at Stories — where it all began. Simple, warm, and the start of everything.</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">16 October 2025</div>
+          <div class="event-title" contenteditable="true" data-placeholder="Title">Our First Date</div>
+          <div class="event-desc" contenteditable="true" data-placeholder="Description">A casual moment at Stories — where it all began. Simple, warm, and the start of everything.</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>
     </div>
+
+    <div class="insert-point"><button onclick="insertMemoryAt(this)" title="Add memory here">+</button></div>
 
     <!-- Event 2 -->
     <div class="event">
@@ -569,32 +273,29 @@
         <div class="slideshow" id="show-2">
           <div class="slides-track" id="track-2"></div>
           <div class="add-photo-label" id="label-2" onclick="document.getElementById('file-2').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-2"></div>
           <span class="img-counter" id="counter-2"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-2').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('2')">×</button>
-          <input class="file-input" id="file-2" type="file" accept="image/*" multiple onchange="addImages(this, '2')"/>
+          <button class="remove-btn" onclick="removeImage('2')">×</button>
+          <input class="file-input" id="file-2" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'2')"/>
         </div>
         <div class="card-body">
-          <div class="event-date">23 December 2025</div>
-          <div class="event-title">Our First Christmas</div>
-          <div class="event-desc">The first of many Christmases together. Every year from now on will be warmer because of you.</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">23 December 2025</div>
+          <div class="event-title" contenteditable="true" data-placeholder="Title">Our First Christmas</div>
+          <div class="event-desc" contenteditable="true" data-placeholder="Description">The first of many Christmases together. Every year from now on will be warmer because of you.</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>
     </div>
+
+    <div class="insert-point"><button onclick="insertMemoryAt(this)" title="Add memory here">+</button></div>
 
     <!-- Event 3 -->
     <div class="event">
@@ -602,32 +303,29 @@
         <div class="slideshow" id="show-3">
           <div class="slides-track" id="track-3"></div>
           <div class="add-photo-label" id="label-3" onclick="document.getElementById('file-3').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-3"></div>
           <span class="img-counter" id="counter-3"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-3').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('3')">×</button>
-          <input class="file-input" id="file-3" type="file" accept="image/*" multiple onchange="addImages(this, '3')"/>
+          <button class="remove-btn" onclick="removeImage('3')">×</button>
+          <input class="file-input" id="file-3" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'3')"/>
         </div>
         <div class="card-body">
-          <div class="event-date">6 February 2026</div>
-          <div class="event-title">Loutchiana's First Psychology Visit</div>
-          <div class="event-desc">A brave step toward taking care of yourself. I'm so proud of you — your strength inspires me every day.</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">6 February 2026</div>
+          <div class="event-title" contenteditable="true" data-placeholder="Title">Loutchiana's First Psychology Visit</div>
+          <div class="event-desc" contenteditable="true" data-placeholder="Description">A brave step toward taking care of yourself. I'm so proud of you — your strength inspires me every day.</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>
     </div>
+
+    <div class="insert-point"><button onclick="insertMemoryAt(this)" title="Add memory here">+</button></div>
 
     <!-- Event 4 -->
     <div class="event">
@@ -635,32 +333,29 @@
         <div class="slideshow" id="show-4">
           <div class="slides-track" id="track-4"></div>
           <div class="add-photo-label" id="label-4" onclick="document.getElementById('file-4').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-4"></div>
           <span class="img-counter" id="counter-4"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-4').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('4')">×</button>
-          <input class="file-input" id="file-4" type="file" accept="image/*" multiple onchange="addImages(this, '4')"/>
+          <button class="remove-btn" onclick="removeImage('4')">×</button>
+          <input class="file-input" id="file-4" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'4')"/>
         </div>
         <div class="card-body">
-          <div class="event-date">18 February 2026</div>
-          <div class="event-title">Our Valentine's Day</div>
-          <div class="event-desc">Every day with you feels like Valentine's Day. This one just had a name to prove it.</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">18 February 2026</div>
+          <div class="event-title" contenteditable="true" data-placeholder="Title">Our Valentine's Day</div>
+          <div class="event-desc" contenteditable="true" data-placeholder="Description">Every day with you feels like Valentine's Day. This one just had a name to prove it.</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>
     </div>
+
+    <div class="insert-point"><button onclick="insertMemoryAt(this)" title="Add memory here">+</button></div>
 
     <!-- Event 5 -->
     <div class="event">
@@ -668,31 +363,26 @@
         <div class="slideshow" id="show-5">
           <div class="slides-track" id="track-5"></div>
           <div class="add-photo-label" id="label-5" onclick="document.getElementById('file-5').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-5"></div>
           <span class="img-counter" id="counter-5"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-5').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('5')">×</button>
-          <input class="file-input" id="file-5" type="file" accept="image/*" multiple onchange="addImages(this, '5')"/>
+          <button class="remove-btn" onclick="removeImage('5')">×</button>
+          <input class="file-input" id="file-5" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'5')"/>
         </div>
         <div class="card-body">
-          <div class="event-date">12 March 2026</div>
-          <div class="event-title">Seeing Each Other Again</div>
-          <div class="event-desc">Distance tried its best. But nothing could stop us from finding our way back to each other.</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">12 March 2026</div>
+          <div class="event-title" contenteditable="true" data-placeholder="Title">Seeing Each Other Again</div>
+          <div class="event-desc" contenteditable="true" data-placeholder="Description">Distance tried its best. But nothing could stop us from finding our way back to each other.</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>
     </div>
 
   </div>
@@ -705,9 +395,7 @@
   </div>
 </section>
 
-<footer>
-  Made with <span>♥</span> by Charbel, for Loutchiana
-</footer>
+<footer>Made with <span>♥</span> by Charbel, for Loutchiana</footer>
 
 <button class="save-btn" onclick="saveWithPhotos()">
   <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -719,91 +407,366 @@
 </button>
 
 <script>
+  // ── floating hearts ──
+  const heartsContainer = document.getElementById('heartsContainer');
+  for (let i = 0; i < 18; i++) {
+    const sp = document.createElement('span');
+    sp.textContent = '♥';
+    sp.style.left = Math.random() * 100 + 'vw';
+    sp.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
+    sp.style.animationDuration = (12 + Math.random() * 18) + 's';
+    sp.style.animationDelay = (Math.random() * 20) + 's';
+    heartsContainer.appendChild(sp);
+  }
+
+  // ── alternating sides — JS-controlled so insert-points don't break nth-child ──
+  function reorderSides() {
+    const events = document.querySelectorAll('.event');
+    events.forEach((el, i) => {
+      el.classList.remove('side-left', 'side-right');
+      el.classList.add(i % 2 === 0 ? 'side-left' : 'side-right');
+    });
+  }
+  reorderSides();
+
+  // ── auto-save text edits ──
+  document.querySelector('.timeline').addEventListener('input', e => {
+    if (e.target.isContentEditable) persistState();
+  });
+
+  // ── scroll reveal ──
+  var revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.event').forEach(el => revealObserver.observe(el));
+
+  // ── localStorage auto-save ──
+  const STORAGE_KEY = 'cl-story';
+
+  function persistState() {
+    try {
+      const data = { slots: {}, texts: {}, dynamic: [] };
+
+      // static slot media
+      ['1','2','3','4','5'].forEach(id => {
+        const s = state[id];
+        if (s && s.items && s.items.length) data.slots[id] = s.items;
+        // also save edited text
+        const showEl = document.getElementById('show-' + id);
+        const evEl = showEl && showEl.closest('.event');
+        if (evEl) data.texts[id] = {
+          date:  evEl.querySelector('.event-date')?.textContent  || '',
+          title: evEl.querySelector('.event-title')?.textContent || '',
+          desc:  evEl.querySelector('.event-desc')?.textContent  || ''
+        };
+      });
+
+      // dynamic events
+      document.querySelectorAll('.event[data-dyn-id]').forEach(el => {
+        const id = el.dataset.dynId;
+        data.dynamic.push({
+          date:  el.querySelector('[data-placeholder="Date"]')?.textContent  || '',
+          title: el.querySelector('[data-placeholder="Title"]')?.textContent || '',
+          desc:  el.querySelector('[data-placeholder="Write something about this moment..."]')?.textContent || '',
+          items: state[id] ? state[id].items : []
+        });
+      });
+
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+      showAutoSaved();
+    } catch(e) { console.warn('Auto-save failed (storage full?):', e); }
+  }
+
+  function loadPersistedState() {
+    try {
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (!raw) return;
+      const data = JSON.parse(raw);
+
+      // restore static slot media
+      if (data.slots) {
+        Object.keys(data.slots).forEach(id => {
+          if (data.slots[id] && data.slots[id].length) {
+            getState(id).items = data.slots[id];
+            renderSlideshow(id);
+          }
+        });
+      }
+
+      // restore edited text
+      if (data.texts) {
+        Object.keys(data.texts).forEach(id => {
+          const showEl = document.getElementById('show-' + id);
+          const evEl = showEl && showEl.closest('.event');
+          if (!evEl) return;
+          const t = data.texts[id];
+          if (t.date)  evEl.querySelector('.event-date').textContent  = t.date;
+          if (t.title) evEl.querySelector('.event-title').textContent = t.title;
+          if (t.desc)  evEl.querySelector('.event-desc').textContent  = t.desc;
+        });
+      }
+
+      // restore dynamic events
+      if (data.dynamic && data.dynamic.length) restoreDynamicEvents(data.dynamic);
+    } catch(e) { console.warn('Could not restore saved state:', e); }
+  }
+
+  // tiny "Auto-saved" toast
+  function showAutoSaved() {
+    let toast = document.getElementById('autosave-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'autosave-toast';
+      toast.style.cssText = 'position:fixed;bottom:80px;right:28px;background:rgba(0,0,0,0.7);color:#aaa;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;padding:6px 14px;border-radius:20px;z-index:200;opacity:0;transition:opacity 0.3s;pointer-events:none;';
+      toast.textContent = '✓ auto-saved';
+      document.body.appendChild(toast);
+    }
+    toast.style.opacity = '1';
+    clearTimeout(toast._t);
+    toast._t = setTimeout(() => toast.style.opacity = '0', 1500);
+  }
+
+  // ── slideshow state — items are { src, type: 'image'|'video' } ──
+  const state = {};
+
+  function getState(id) {
+    if (!state[id]) state[id] = { items: [], current: 0, timer: null };
+    return state[id];
+  }
+
+  function addImages(input, id) {
+    const files = Array.from(input.files);
+    if (!files.length) return;
+    const s = getState(id);
+    let loaded = 0;
+    files.forEach(file => {
+      const reader = new FileReader();
+      const type = file.type.startsWith('video/') ? 'video' : 'image';
+      reader.onload = e => {
+        s.items.push({ src: e.target.result, type });
+        loaded++;
+        if (loaded === files.length) { renderSlideshow(id); persistState(); }
+      };
+      reader.readAsDataURL(file);
+    });
+    input.value = '';
+  }
+
+  function renderSlideshow(id) {
+    const s       = getState(id);
+    const track   = document.getElementById('track-' + id);
+    const dotsEl  = document.getElementById('dots-' + id);
+    const label   = document.getElementById('label-' + id);
+    const counter = document.getElementById('counter-' + id);
+    const show    = document.getElementById('show-' + id);
+
+    track.innerHTML = '';
+    dotsEl.innerHTML = '';
+
+    s.items.forEach((item, i) => {
+      const slide = document.createElement('div');
+      slide.className = 'slide' + (i === s.current ? ' active' : '');
+
+      if (item.type === 'video') {
+        const vid = document.createElement('video');
+        vid.src = item.src;
+        vid.muted = true;
+        vid.loop = true;
+        vid.playsInline = true;
+        vid.setAttribute('playsinline', '');
+        if (i === s.current) vid.play().catch(() => {});
+        slide.appendChild(vid);
+        const badge = document.createElement('div');
+        badge.className = 'video-badge';
+        badge.textContent = '▶ video';
+        slide.appendChild(badge);
+      } else {
+        const img = document.createElement('img');
+        img.src = item.src;
+        slide.appendChild(img);
+      }
+
+      track.appendChild(slide);
+
+      const dot = document.createElement('div');
+      dot.className = 'dot-indicator' + (i === s.current ? ' active' : '');
+      dot.onclick = () => goTo(id, i);
+      dotsEl.appendChild(dot);
+    });
+
+    counter.textContent = (s.current + 1) + ' / ' + s.items.length;
+    label.classList.add('hidden');
+    show.classList.add('has-images');
+
+    if (s.timer) clearInterval(s.timer);
+    if (s.items.length > 1)
+      s.timer = setInterval(() => goTo(id, (s.current + 1) % s.items.length), 4000);
+  }
+
+  function removeImage(id) {
+    const s = getState(id);
+    if (!s.items.length) return;
+    s.items.splice(s.current, 1);
+    if (!s.items.length) {
+      if (s.timer) clearInterval(s.timer);
+      s.timer = null; s.current = 0;
+      document.getElementById('track-' + id).innerHTML = '';
+      document.getElementById('dots-' + id).innerHTML = '';
+      document.getElementById('counter-' + id).textContent = '';
+      document.getElementById('label-' + id).classList.remove('hidden');
+      document.getElementById('show-' + id).classList.remove('has-images');
+      persistState();
+      return;
+    }
+    s.current = Math.min(s.current, s.items.length - 1);
+    renderSlideshow(id);
+    persistState();
+  }
+
+  function goTo(id, index) {
+    const s      = getState(id);
+    const track  = document.getElementById('track-' + id);
+    const dotsEl = document.getElementById('dots-' + id);
+    const counter = document.getElementById('counter-' + id);
+    const slides = track.querySelectorAll('.slide');
+    const dots   = dotsEl.querySelectorAll('.dot-indicator');
+
+    // pause leaving video
+    const leavingVid = slides[s.current]?.querySelector('video');
+    if (leavingVid) leavingVid.pause();
+
+    slides[s.current]?.classList.remove('active');
+    dots[s.current]?.classList.remove('active');
+    s.current = index;
+    slides[s.current]?.classList.add('active');
+    dots[s.current]?.classList.add('active');
+    counter.textContent = (s.current + 1) + ' / ' + s.items.length;
+
+    // play entering video
+    const enteringVid = slides[s.current]?.querySelector('video');
+    if (enteringVid) enteringVid.play().catch(() => {});
+
+    if (s.timer) {
+      clearInterval(s.timer);
+      if (s.items.length > 1)
+        s.timer = setInterval(() => goTo(id, (s.current + 1) % s.items.length), 4000);
+    }
+  }
+
   // ── dynamic events ──
   let dynCount = 0;
 
-  function addNewMemory(prefill) {
-    dynCount++;
-    const id = 'dyn-' + dynCount;
+  function createInsertPoint() {
+    const ip = document.createElement('div');
+    ip.className = 'insert-point';
+    ip.innerHTML = `<button onclick="insertMemoryAt(this)" title="Add memory here">+</button>`;
+    return ip;
+  }
 
+  function buildEventElement(id, prefill) {
     const el = document.createElement('div');
     el.className = 'event';
     el.dataset.dynId = id;
-
     el.innerHTML = `
       <div class="event-card">
         <div class="slideshow" id="show-${id}">
           <div class="slides-track" id="track-${id}"></div>
           <div class="add-photo-label" id="label-${id}" onclick="document.getElementById('file-${id}').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <rect x="3" y="3" width="18" height="18" rx="3"/>
-              <circle cx="8.5" cy="8.5" r="1.5"/>
-              <path d="M21 15l-5-5L5 21"/>
-            </svg>
-            Click to add photos
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+            Click to add photos or videos
           </div>
           <div class="dots" id="dots-${id}"></div>
           <span class="img-counter" id="counter-${id}"></span>
           <button class="add-more-btn" onclick="document.getElementById('file-${id}').click()">
-            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>
-            Add more
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M12 5v14M5 12h14"/></svg>Add more
           </button>
-          <button class="remove-btn" title="Remove this photo" onclick="removeImage('${id}')">×</button>
-          <input class="file-input" id="file-${id}" type="file" accept="image/*" multiple onchange="addImages(this, '${id}')"/>
+          <button class="remove-btn" onclick="removeImage('${id}')">×</button>
+          <input class="file-input" id="file-${id}" type="file" accept="image/*,video/*" multiple onchange="addImages(this,'${id}')"/>
         </div>
         <div class="card-body">
-          <div class="event-date" contenteditable="true" data-placeholder="Date  (e.g. 1 April 2026)">${prefill ? prefill.date : ''}</div>
+          <div class="event-date" contenteditable="true" data-placeholder="Date">${prefill ? prefill.date : ''}</div>
           <div class="event-title" contenteditable="true" data-placeholder="Title">${prefill ? prefill.title : ''}</div>
           <div class="event-desc" contenteditable="true" data-placeholder="Write something about this moment...">${prefill ? prefill.desc : ''}</div>
+          <div class="edit-hint"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>Click any text to edit</div>
         </div>
       </div>
-      <div class="event-spacer"></div>
-      <div class="dot"></div>
-      <div class="event-spacer"></div>`;
+      <button class="delete-event-btn" onclick="deleteMemory(this)" title="Delete this memory">🗑</button>
+      <div class="event-spacer"></div><div class="dot"></div><div class="event-spacer"></div>`;
+    return el;
+  }
 
+  function addNewMemory(prefill, afterEl) {
+    dynCount++;
+    const id = 'dyn-' + dynCount;
+    const el = buildEventElement(id, prefill);
     const timeline = document.querySelector('.timeline');
-    timeline.appendChild(el);
+
+    if (afterEl) {
+      afterEl.after(el);
+      el.after(createInsertPoint());
+    } else {
+      timeline.appendChild(createInsertPoint());
+      timeline.appendChild(el);
+    }
+
+    reorderSides();
     revealObserver.observe(el);
     setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'center' }), 80);
+    persistState();
 
-    if (prefill && prefill.images && prefill.images.length) {
+    if (prefill && prefill.items && prefill.items.length) {
       const s = getState(id);
-      s.images = prefill.images;
+      s.items = prefill.items;
       renderSlideshow(id);
     }
+  }
+
+  function deleteMemory(btn) {
+    if (!confirm('Delete this memory?')) return;
+    const event = btn.closest('.event');
+    // also remove the adjacent insert-point (before or after)
+    const prev = event.previousElementSibling;
+    const next = event.nextElementSibling;
+    if (next && next.classList.contains('insert-point')) next.remove();
+    else if (prev && prev.classList.contains('insert-point')) prev.remove();
+    event.remove();
+    reorderSides();
+    persistState();
+  }
+
+  function insertMemoryAt(btn) {
+    addNewMemory(null, btn.parentElement);
   }
 
   function restoreDynamicEvents(events) {
     events.forEach(ev => addNewMemory(ev));
   }
 
-  // ── save with photos ──
+  // ── save with photos/videos ──
   function saveWithPhotos() {
-    // collect images for static slots
     const imgData = {};
     ['1','2','3','4','5'].forEach(id => {
       const s = state[id];
-      if (s && s.images.length > 0) imgData[id] = s.images;
+      if (s && s.items && s.items.length > 0) imgData[id] = s.items;
     });
 
-    // collect dynamic events
     const dynData = [];
     document.querySelectorAll('.event[data-dyn-id]').forEach(el => {
       const id = el.dataset.dynId;
       dynData.push({
-        date:   el.querySelector('[data-placeholder="Date  (e.g. 1 April 2026)"]').textContent,
-        title:  el.querySelector('[data-placeholder="Title"]').textContent,
-        desc:   el.querySelector('[data-placeholder="Write something about this moment..."]').textContent,
-        images: state[id] ? state[id].images : []
+        date:  el.querySelector('[data-placeholder="Date"]')?.textContent || '',
+        title: el.querySelector('[data-placeholder="Title"]')?.textContent || '',
+        desc:  el.querySelector('[data-placeholder="Write something about this moment..."]')?.textContent || '',
+        items: state[id] ? state[id].items : []
       });
     });
 
-    const initScript = `\n<!-- SAVED_PHOTOS -->\n<script>\nwindow.addEventListener('DOMContentLoaded', function() {\n  var imgs = ${JSON.stringify(imgData)};\n  Object.keys(imgs).forEach(function(id) { var s = getState(id); s.images = imgs[id]; renderSlideshow(id); });\n  restoreDynamicEvents(${JSON.stringify(dynData)});\n});\n<\/script>\n<!-- /SAVED_PHOTOS -->`;
+    const initScript = `\n<!-- SAVED_DATA -->\n<script>\nwindow.addEventListener('DOMContentLoaded', function() {\n  var imgs=${JSON.stringify(imgData)};\n  Object.keys(imgs).forEach(function(id){var s=getState(id);s.items=imgs[id];renderSlideshow(id);});\n  restoreDynamicEvents(${JSON.stringify(dynData)});\n});\n<\/script>\n<!-- /SAVED_DATA -->`;
 
     let html = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
-    html = html.replace(/\n?<!-- SAVED_PHOTOS -->[\s\S]*?<!-- \/SAVED_PHOTOS -->/g, '');
-    // strip dynamic event divs from saved HTML (they get re-created by restoreDynamicEvents)
-    html = html.replace(/<div class="event" data-dyn-id="[^"]*">[\s\S]*?<\/div>\s*<\/div>\s*<\/div>/g, '');
+    html = html.replace(/\n?<!-- SAVED_DATA -->[\s\S]*?<!-- \/SAVED_DATA -->/g, '');
     html = html.replace('</body>', initScript + '\n</body>');
 
     const blob = new Blob([html], { type: 'text/html' });
@@ -814,138 +777,8 @@
     URL.revokeObjectURL(a.href);
   }
 
-  // ── floating hearts ──
-  const heartsContainer = document.getElementById('heartsContainer');
-  for (let i = 0; i < 18; i++) {
-    const s = document.createElement('span');
-    s.textContent = '♥';
-    s.style.left = Math.random() * 100 + 'vw';
-    s.style.fontSize = (0.8 + Math.random() * 1.2) + 'rem';
-    s.style.animationDuration = (12 + Math.random() * 18) + 's';
-    s.style.animationDelay = (Math.random() * 20) + 's';
-    heartsContainer.appendChild(s);
-  }
-
-  // ── scroll reveal ──
-  var revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); revealObserver.unobserve(e.target); }
-    });
-  }, { threshold: 0.15 });
-  document.querySelectorAll('.event').forEach(el => revealObserver.observe(el));
-
-  // ── slideshow state ──
-  // state[id] = { images: [], current: 0, timer: null }
-  const state = {};
-
-  function getState(id) {
-    if (!state[id]) state[id] = { images: [], current: 0, timer: null };
-    return state[id];
-  }
-
-  function addImages(input, id) {
-    const files = Array.from(input.files);
-    if (!files.length) return;
-    const s = getState(id);
-
-    let loaded = 0;
-    files.forEach(file => {
-      const reader = new FileReader();
-      reader.onload = e => {
-        s.images.push(e.target.result);
-        loaded++;
-        if (loaded === files.length) renderSlideshow(id);
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // reset input so same files can be re-added if needed
-    input.value = '';
-  }
-
-  function renderSlideshow(id) {
-    const s = getState(id);
-    const track   = document.getElementById('track-' + id);
-    const dotsEl  = document.getElementById('dots-' + id);
-    const label   = document.getElementById('label-' + id);
-    const counter = document.getElementById('counter-' + id);
-    const show    = document.getElementById('show-' + id);
-
-    // rebuild slides
-    track.innerHTML = '';
-    dotsEl.innerHTML = '';
-
-    s.images.forEach((src, i) => {
-      const slide = document.createElement('div');
-      slide.className = 'slide' + (i === s.current ? ' active' : '');
-      const img = document.createElement('img');
-      img.src = src;
-      slide.appendChild(img);
-      track.appendChild(slide);
-
-      const dot = document.createElement('div');
-      dot.className = 'dot-indicator' + (i === s.current ? ' active' : '');
-      dot.onclick = () => goTo(id, i);
-      dotsEl.appendChild(dot);
-    });
-
-    counter.textContent = (s.current + 1) + ' / ' + s.images.length;
-    label.classList.add('hidden');
-    show.classList.add('has-images');
-
-    // restart auto-play
-    if (s.timer) clearInterval(s.timer);
-    if (s.images.length > 1) {
-      s.timer = setInterval(() => goTo(id, (s.current + 1) % s.images.length), 3000);
-    }
-  }
-
-  function removeImage(id) {
-    const s = getState(id);
-    if (!s.images.length) return;
-    s.images.splice(s.current, 1);
-    if (!s.images.length) {
-      // no images left — reset to empty state
-      if (s.timer) clearInterval(s.timer);
-      s.timer = null;
-      s.current = 0;
-      document.getElementById('track-' + id).innerHTML = '';
-      document.getElementById('dots-' + id).innerHTML = '';
-      document.getElementById('counter-' + id).textContent = '';
-      document.getElementById('label-' + id).classList.remove('hidden');
-      document.getElementById('show-' + id).classList.remove('has-images');
-      return;
-    }
-    s.current = Math.min(s.current, s.images.length - 1);
-    renderSlideshow(id);
-  }
-
-  function goTo(id, index) {
-    const s = getState(id);
-    const track  = document.getElementById('track-' + id);
-    const dotsEl = document.getElementById('dots-' + id);
-    const counter = document.getElementById('counter-' + id);
-
-    const slides = track.querySelectorAll('.slide');
-    const dots   = dotsEl.querySelectorAll('.dot-indicator');
-
-    slides[s.current]?.classList.remove('active');
-    dots[s.current]?.classList.remove('active');
-
-    s.current = index;
-
-    slides[s.current]?.classList.add('active');
-    dots[s.current]?.classList.add('active');
-    counter.textContent = (s.current + 1) + ' / ' + s.images.length;
-
-    // restart timer on manual click
-    if (s.timer) {
-      clearInterval(s.timer);
-      if (s.images.length > 1) {
-        s.timer = setInterval(() => goTo(id, (s.current + 1) % s.images.length), 3000);
-      }
-    }
-  }
+  // ── restore saved state (must be last — needs all consts and functions defined) ──
+  loadPersistedState();
 </script>
 </body>
 </html>
